@@ -32,4 +32,4 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64
-          tags: emsoftoo:linux-amd64-latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/emsoftoo:linux-amd64-latest
