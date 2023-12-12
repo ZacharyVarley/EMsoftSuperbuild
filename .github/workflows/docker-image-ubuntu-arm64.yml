@@ -2,9 +2,9 @@ name: Docker Image CI Ubuntu ARM64
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "developOO" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "developOO" ]
 
 jobs:
   docker:
