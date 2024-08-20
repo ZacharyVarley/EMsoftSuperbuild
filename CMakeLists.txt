@@ -143,9 +143,13 @@ get_filename_component (Fortran_COMPILER_NAME ${CMAKE_Fortran_COMPILER} NAME)
 
 #------------------------------------------------------------------------------
 # On Windows we are going to use Intel MKL with the FFTW interface so we do not
-# need to install FFTW3
+# need to install FFTW3...
 if(${Fortran_COMPILER_NAME} MATCHES "gfortran.*")
-  include(FFTW)
+  if(WIN32)
+    include(MKL)
+  else()
+    include(FFTW)
+  endif()
 elseif (${Fortran_COMPILER_NAME} MATCHES "ifort.*")
   set(OSX_DEPLOYMENT_TARGET "10.13")
   include(MKL)
