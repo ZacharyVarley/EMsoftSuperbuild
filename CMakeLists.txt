@@ -11,14 +11,7 @@ cmake_minimum_required(VERSION 3.14.5)
 project(EMsoftSuperBuild VERSION 1.0.0.0 LANGUAGES C CXX Fortran)
 
 if(WIN32)
-
-  message(STATUS "**************************************************************************")
-  message(STATUS "* Platform: Windows")
-  message(STATUS "* ONLY NVidia GPUs are supported on Windows platforms. Please ensure that")
-  message(STATUS "* the NVidia GPU computing toolkit version 10.0 is installed on your")
-  message(STATUS "* computer before trying to compile EMsoft.")
-  message(STATUS "**************************************************************************")
-
+  find_package(OpenCL CONFIG REQUIRED)
 endif()
 
 
